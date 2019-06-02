@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OWServiceService } from '../owservice.service';
+import { OWServiceService, HerominInfo } from '../owservice.service';
 
 @Component({
   selector: 'app-heroinfo',
@@ -10,9 +10,19 @@ export class HeroinfoComponent implements OnInit {
 
   constructor(private Service: OWServiceService) { }
 
+  Hero:HerominInfo;
+
   ngOnInit() {
+
+    this.Service.GetHero(this.Service.GetID()).subscribe(res =>{
+
+      this.Hero = res;
+
+    })
   }
 
   
+
+
 
 }

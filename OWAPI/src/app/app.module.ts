@@ -37,8 +37,12 @@ import { HeroinfoComponent } from './heroinfo/heroinfo.component';
     CardModule,
     FormsModule,
     ButtonModule, 
-    RouterModule,
     NgbModule,
+    RouterModule.forRoot([
+      {path: "Heroes", component: MijnAPIComponent,},
+      {path: "Hero", component: HeroinfoComponent}
+      
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

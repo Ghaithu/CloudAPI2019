@@ -15,7 +15,11 @@ export class OWServiceService {
   }
 
   GetHero(id){
-    return this.http.get<HerominInfo[]>(`https://overwatch-api.net/api/v1/hero/${id}`)
+    return this.http.get<HerominInfo>(`https://overwatch-api.net/api/v1/hero/${id}`)
+  }
+
+  PassID(id){
+    this.heroID = id;
   }
 
   GetID(){

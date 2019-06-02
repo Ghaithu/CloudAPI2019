@@ -7,7 +7,19 @@
     <h5 class="card-title">Hero Name: {{Heroinfo.data[i].name}}</h5>
     <h3>Hero id: {{Heroinfo.data[i].id}} </h3>
     <p class="card-text">Description: {{Heroinfo.data[i].description}}</p>
-    <a href="#" class="btn btn-primary" (click)="GetHero(i)">Go somewhere</a>
+    <p class="card-text">Real name: {{Heroinfo.data[i].real_name}}</p>
+    <p class="card-text">Age: {{Heroinfo.data[i].age}}</p>
+    <p class="card-text">Corporation: {{Heroinfo.data[i].affiliation}}</p>
+    <button (click)="GetHero(i)" [routerLink]="['/Hero']" type="button" class="btn btn-primary" >Click me</button>
+    
   </div>
 </div>
 </div>
+
+
+<!--- 
+
+*ngFor="let H of Heroinfo.data; let i = index"
+-->
+
+<!-- <button [routerLink]="['/Heroes/Hero']" type="button" class="btn btn-primary" (click)="GetHero(i)" >Go somewhere</button> -->

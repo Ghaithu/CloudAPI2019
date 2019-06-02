@@ -22,9 +22,7 @@ export class MijnAPIComponent implements OnInit {
   
 
   GetHero(id){
-    this.Service.GetID();
-    this.Service.GetHero(id);
-    console.log(this.Heroinfo);
+    this.Service.PassID(id+1);
   }
 
 }
