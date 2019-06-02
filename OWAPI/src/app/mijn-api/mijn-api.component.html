@@ -1,7 +1,11 @@
 <h1>Overwatch Heroes</h1>
 <br><br>
+<!-- <table>
+  <tr *ngFor="let H of Heroinfo.data| slice: (page-1) * pageSize : (page-1) * pageSize + pageSize"> -->
+    <!-- content here -->
+ 
 <div class="row">
-<div *ngFor="let H of Heroinfo.data; let i = index" class="col-4 card" style="width: 18rem;">
+<div *ngFor="let H of Heroinfo.data; let i = index;" class="col-4 card" style="width: 18rem;">
   <img class="card-img-top" src="https://i.ytimg.com/vi/NdqbI0_0GsM/maxresdefault.jpg" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">Hero Name: {{Heroinfo.data[i].name}}</h5>
@@ -14,8 +18,13 @@
     
   </div>
 </div>
+<button type="button" class="btn btn-primary" [disabled]="pageNum == 1" (click)="prevPage()">Previous page</button>
+<button type="button" class="btn btn-primary" (click)="nextPage()">Next page</button>
 </div>
 
+<!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+<!-- </tr>
+</table> -->
 
 <!--- 
 

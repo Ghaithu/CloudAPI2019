@@ -12,9 +12,25 @@ export class MijnAPIComponent implements OnInit {
 
   constructor(private Service: OWServiceService) { }
 
+  pageNum:number =1;
+  nextPage(){
+    this.pageNum++;
+    this.Service.GetName(this.pageNum).subscribe(a =>{
+      this.Heroinfo = a;
+    })
+    console.log(this.pageNum)
+  }
+  prevPage(){
+    this.pageNum--;
+    this.Service.GetName(this.pageNum).subscribe(a =>{
+      this.Heroinfo = a;
+    })
+  }
+
+
   ngOnInit() {
 
-    this.Service.GetName().subscribe(a =>{
+    this.Service.GetName(this.pageNum).subscribe(a =>{
       this.Heroinfo = a;
     })
     

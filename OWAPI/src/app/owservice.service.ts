@@ -10,8 +10,8 @@ export class OWServiceService {
   heroDescription: string;
   heroHealth: number;
 
-  GetName(){
-    return this.http.get<HerominInfo[]>("https://overwatch-api.net/api/v1/hero")
+  GetName(pageNum){
+    return this.http.get<HerominInfo[]>(`https://overwatch-api.net/api/v1/hero?page=${pageNum}&limit=9`)
   }
 
   GetHero(id){

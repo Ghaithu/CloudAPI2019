@@ -9,7 +9,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {PanelModule} from 'primeng/panel';
 import {HttpClientModule} from '@angular/common/http';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 import {CardModule} from 'primeng/card';
 import {FormsModule} from '@angular/forms';
 import {DropdownModule} from 'primeng/dropdown';
@@ -17,6 +17,7 @@ import {ButtonModule} from 'primeng/button';
 import {RouterModule} from '@angular/router';
 import { MijnAPIComponent } from './mijn-api/mijn-api.component';
 import { HeroinfoComponent } from './heroinfo/heroinfo.component';
+
 
 
 
@@ -38,6 +39,7 @@ import { HeroinfoComponent } from './heroinfo/heroinfo.component';
     FormsModule,
     ButtonModule, 
     NgbModule,
+    NgxPaginationModule,
     RouterModule.forRoot([
       {path: "Heroes", component: MijnAPIComponent,},
       {path: "Hero", component: HeroinfoComponent}
