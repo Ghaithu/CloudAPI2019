@@ -21,8 +21,6 @@ export class NavbarComponent implements OnInit {
   GetSearchHero(){
     this.Service.PassID(this.sumID);
     this.router.navigate(['/Hero']);
-    
-
   }
 
 }

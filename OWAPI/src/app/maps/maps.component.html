@@ -1,0 +1,59 @@
+<h1>Overwatch Maps</h1>
+<br><br>
+<form class="form-inline my-2 my-lg-0" #myForm="ngForm" (ngSubmit)="GetSearchMap()">
+      <input class="form-control mr-sm-2" type="search" ngControl="sum" [(ngModel)]="_mapid" placeholder="Search for Map ID" aria-label="Search" [ngModelOptions]="{standalone: true}">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+ 
+<div class="row">
+<div *ngFor="let M of mapinfo; let i = index;" class="col-4 card" style="width: 18rem;">
+  <img class="card-img-top" src="https://1000logos.net/wp-content/uploads/2018/01/overwatch-logo.png" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Map Name: {{mapinfo[i].mapname}}</h5>
+    <p class="card-text">Description: {{mapinfo[i].description}}</p>
+    <p class="card-text">Location: {{mapinfo[i].location}}</p>
+    <p class="card-text">Location: {{mapinfo[i].order}}</p>
+
+
+    <!-- <button (click)="GetHero(i)" [routerLink]="['/Hero']" type="button" class="btn btn-primary" >Click me</button> -->
+
+<button type="button" class="btn btn-primary" (click)="Service.DeleteMap(i +1)">Delete</button>
+
+    
+  </div>
+</div>
+
+<form #myForm="ngForm" (ngSubmit)="NewMap()">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Map Name</span>
+    </div>
+    <input [(ngModel)]="addmap.mapname" [ngModelOptions]="{standalone: true}" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" ngControl="post">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Description</span>
+    </div>
+    <input [(ngModel)]="addmap.description" [ngModelOptions]="{standalone: true}" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" ngControl="post">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Location</span>
+    </div>
+    <input [(ngModel)]="addmap.location" [ngModelOptions]="{standalone: true}" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" ngControl="post">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Order</span>
+    </div>
+    <input [(ngModel)]="addmap.order" [ngModelOptions]="{standalone: true}" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" ngControl="post">
+  </div>
+  <button type="submit" class="btn btn-primary">Add Map</button>
+   
+
+
+
+  <!-- <button type="button" class="btn btn-primary" (click)="nextPage()">Next page</button> -->
+</form>
+
+</div>

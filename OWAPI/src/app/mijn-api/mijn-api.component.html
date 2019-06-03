@@ -6,15 +6,14 @@
  
 <div class="row">
 <div *ngFor="let H of Heroinfo.data; let i = index;" class="col-4 card" style="width: 18rem;">
-  <img class="card-img-top" src="https://i.ytimg.com/vi/NdqbI0_0GsM/maxresdefault.jpg" alt="Card image cap">
+  <img class="card-img-top" src="https://1000logos.net/wp-content/uploads/2018/01/overwatch-logo.png" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">Hero Name: {{Heroinfo.data[i].name}}</h5>
-    <h3>Hero id: {{Heroinfo.data[i].id}} </h3>
     <p class="card-text">Description: {{Heroinfo.data[i].description}}</p>
     <p class="card-text">Real name: {{Heroinfo.data[i].real_name}}</p>
     <p class="card-text">Age: {{Heroinfo.data[i].age}}</p>
     <p class="card-text">Corporation: {{Heroinfo.data[i].affiliation}}</p>
-    <button (click)="GetHero(i)" [routerLink]="['/Hero']" type="button" class="btn btn-primary" >Click me</button>
+    <button (click)="GetHero(i)" [routerLink]="['/Hero']" type="button" class="btn btn-primary" >More info</button>
     
   </div>
 </div>

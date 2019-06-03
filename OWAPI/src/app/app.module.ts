@@ -17,6 +17,8 @@ import {ButtonModule} from 'primeng/button';
 import {RouterModule} from '@angular/router';
 import { MijnAPIComponent } from './mijn-api/mijn-api.component';
 import { HeroinfoComponent } from './heroinfo/heroinfo.component';
+import { MapsComponent } from './maps/maps.component';
+import { MapinfoComponent } from './mapinfo/mapinfo.component';
 
 
 
@@ -26,7 +28,9 @@ import { HeroinfoComponent } from './heroinfo/heroinfo.component';
     AppComponent,
     NavbarComponent,
     MijnAPIComponent,
-    HeroinfoComponent
+    HeroinfoComponent,
+    MapsComponent,
+    MapinfoComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,9 @@ import { HeroinfoComponent } from './heroinfo/heroinfo.component';
     NgxPaginationModule,
     RouterModule.forRoot([
       {path: "Heroes", component: MijnAPIComponent,},
-      {path: "Hero", component: HeroinfoComponent}
+      {path: "Hero", component: HeroinfoComponent},
+      {path: "Maps", component: MapsComponent},
+      {path: "Map", component: MapinfoComponent}
       
     ])
   ],
