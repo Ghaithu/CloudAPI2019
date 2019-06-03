@@ -20,7 +20,7 @@ namespace API.Model
                     mapname = "Anubis",
                     description = "Anubis is a deserty map situated in Egypt, it's a 2 capture points type map.",
                     location= "Egypt",
-                    order = 1
+                    order = 88
                 };
 
                 var map2 = new Map()
@@ -28,14 +28,14 @@ namespace API.Model
                     mapname = "Watch Point Gibraltar",
                     description = "Anubis is a deserty map situated in Egypt, it's a 2 capture points type map.",
                     location = "Spain",
-                    order = 2
+                    order = 45
                 };
 
                 var map3 = new Map()
                 {
-                    mapname = "Watch Point Gibraltar",
+                    mapname = "Horizon Lunar Colony",
                     description = "Anubis is a deserty map situated in Egypt, it's a 2 capture points type map.",
-                    location = "Spain",
+                    location = "Moon",
                     order = 66
                 };
 

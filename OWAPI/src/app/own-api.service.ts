@@ -16,8 +16,8 @@ export class OwnAPIService {
 
   mapID :number;
 
-  GetMap(){
-    return this.http.get<Mapinfo[]>(`http://localhost:50073/api/maps/`)
+  GetMap(pageNum,sort,dir){
+    return this.http.get<Mapinfo[]>(`http://localhost:50073/api/maps?page=${pageNum}&limit=3&sort=${sort}&dir=${dir}`)
   }
 
   GetMapID(id){
@@ -30,6 +30,8 @@ export class OwnAPIService {
   MapID(){
     return this.mapID;
   }
+
+  
 
 
   DeleteMap(id){

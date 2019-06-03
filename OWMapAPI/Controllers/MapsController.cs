@@ -19,11 +19,43 @@ namespace API.Controllers
 
         //een resounce lijst opvragen
         [HttpGet]
-        public List<Map> GetMaps()
+        public List<Map> GetMaps(string name, string location, int? page, string sort, int limit = 2, string dir = "asc")
         {
+            IQueryable<Map> query = _context.Maps;
+            if (!string.IsNullOrWhiteSpace(name))
+                query = query.Where(m => m.mapname == name);
+            if (!string.IsNullOrWhiteSpace(location))
+                query = query.Where(l => l.location == location);
 
-            return _context.Maps.ToList();
+            if (!string.IsNullOrWhiteSpace(sort))
+            {
+                switch (sort)
+                {
+                    case "name":
+                        if (dir == "asc")
+                            query = query.OrderBy(m => m.mapname);
+                        else if (dir == "desc")
+                            query = query.OrderByDescending(m => m.mapname);
+                        break;
+                    case "order":
+                        if (dir == "asc")
+                            query = query.OrderBy(o => o.order);
+                        else if (dir == "desc")
+                            query = query.OrderByDescending(o => o.order);
+                        break;
+                }
+            }
 
+                if (page.HasValue)
+                    query = query.Skip(page.Value * limit);
+                query = query.Take(limit);
+
+
+                return query.ToList();
+
+
+
+            
         }
 
         //1 resource adhv id opvragen
@@ -75,6 +107,25 @@ namespace API.Controllers
             return NoContent();
 
         }
+
+        //[HttpGet]
+        //public List<Map> GetAllMaps(string name, string location, int? page, int length = 2)
+        //{
+        //    IQueryable<Map> query = _context.Maps;
+        //    if (!string.IsNullOrWhiteSpace(name))
+        //        query = query.Where(m => m.mapname == name);
+        //    if (!string.IsNullOrWhiteSpace(location))
+        //        query = query.Where(l => l.location == location);
+
+        //    if (page.HasValue)
+        //        query = query.Skip(page.Value * length);
+        //    query = query.Take(length);
+
+
+        //    return query.ToList();
+        //}
+
+
         //    public async Task<IActionResult> Index(string sortOrder)
         //    {
         //        ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";

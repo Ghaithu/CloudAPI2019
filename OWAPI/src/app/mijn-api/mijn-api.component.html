@@ -3,7 +3,14 @@
 <!-- <table>
   <tr *ngFor="let H of Heroinfo.data| slice: (page-1) * pageSize : (page-1) * pageSize + pageSize"> -->
     <!-- content here -->
- 
+    <form class="form-inline my-2 my-lg-0" (ngSubmit)="GetSearchHero()">
+      <input class="form-control mr-sm-2" type="search" ngControl="sum" [(ngModel)]="sumID" placeholder="Search for Hero ID" aria-label="Search" [ngModelOptions]="{standalone: true}">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <br>
+    <button type="button" class="btn btn-primary" [disabled]="pageNum == 1" (click)="prevPage()">Previous page</button>
+<button type="button" class="btn btn-primary" (click)="nextPage()">Next page</button>
+    <br>
 <div class="row">
 <div *ngFor="let H of Heroinfo.data; let i = index;" class="col-4 card" style="width: 18rem;">
   <img class="card-img-top" src="https://1000logos.net/wp-content/uploads/2018/01/overwatch-logo.png" alt="Card image cap">
@@ -13,21 +20,11 @@
     <p class="card-text">Real name: {{Heroinfo.data[i].real_name}}</p>
     <p class="card-text">Age: {{Heroinfo.data[i].age}}</p>
     <p class="card-text">Corporation: {{Heroinfo.data[i].affiliation}}</p>
+    <p class="card-text">SubRoles: {{Heroinfo.data[i].subroles}}</p>
     <button (click)="GetHero(i)" [routerLink]="['/Hero']" type="button" class="btn btn-primary" >More info</button>
     
   </div>
 </div>
-<button type="button" class="btn btn-primary" [disabled]="pageNum == 1" (click)="prevPage()">Previous page</button>
-<button type="button" class="btn btn-primary" (click)="nextPage()">Next page</button>
+
 </div>
 
-<!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
-<!-- </tr>
-</table> -->
-
-<!--- 
-
-*ngFor="let H of Heroinfo.data; let i = index"
--->
-
-<!-- <button [routerLink]="['/Heroes/Hero']" type="button" class="btn btn-primary" (click)="GetHero(i)" >Go somewhere</button> -->

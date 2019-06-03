@@ -19,6 +19,7 @@ import { MijnAPIComponent } from './mijn-api/mijn-api.component';
 import { HeroinfoComponent } from './heroinfo/heroinfo.component';
 import { MapsComponent } from './maps/maps.component';
 import { MapinfoComponent } from './mapinfo/mapinfo.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -30,7 +31,8 @@ import { MapinfoComponent } from './mapinfo/mapinfo.component';
     MijnAPIComponent,
     HeroinfoComponent,
     MapsComponent,
-    MapinfoComponent
+    MapinfoComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,9 @@ import { MapinfoComponent } from './mapinfo/mapinfo.component';
       {path: "Heroes", component: MijnAPIComponent,},
       {path: "Hero", component: HeroinfoComponent},
       {path: "Maps", component: MapsComponent},
-      {path: "Map", component: MapinfoComponent}
+      {path: "Map", component: MapinfoComponent},
+      {path: "Home", component:HomeComponent},
+      {path: '', redirectTo: "Home", pathMatch: 'full'}
       
     ])
   ],

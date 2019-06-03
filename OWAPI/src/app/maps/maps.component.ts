@@ -17,17 +17,69 @@ export class MapsComponent implements OnInit {
   _mapid:number;
 
 
+  Nameasc(){
+    this.sort = "name";
+    this.dir = "asc";
+    this.Service.GetMap(this.pageNum,this.sort,this.dir).subscribe(a =>{
+      this.mapinfo = a;
+    })
+  }
+
+  Namedesc(){
+    this.sort = "name";
+    this.dir = "desc";
+    this.Service.GetMap(this.pageNum,this.sort,this.dir).subscribe(a =>{
+      this.mapinfo = a;
+    })
+
+  }
+
+  Orderasc(){
+    this.sort = "order";
+    this.dir = "asc";
+    this.Service.GetMap(this.pageNum,this.sort,this.dir).subscribe(a =>{
+      this.mapinfo = a;
+    })
+
+  }
+
+  Orderdesc(){
+    this.sort = "order";
+    this.dir = "desc";
+    this.Service.GetMap(this.pageNum,this.sort,this.dir).subscribe(a =>{
+      this.mapinfo = a;
+    })
+
+  }
+
+
 
 GetSearchMap(){
   this.Service.PassMapID(this._mapid);
   this.router.navigate(['/Map']);
-  console.log(this._mapid);
 
 }
+pageNum:number = 0;
+sort:string;
+dir:string;
+
+  nextPage(){
+    this.pageNum++;
+    this.Service.GetMap(this.pageNum,this.sort,this.dir).subscribe(a =>{
+      this.mapinfo = a;
+    })
+    console.log(this.pageNum)
+  }
+  prevPage(){
+    this.pageNum--;
+    this.Service.GetMap(this.pageNum,this.sort,this.dir).subscribe(a =>{
+      this.mapinfo = a;
+    })
+  }
 
 ngOnInit() {
 
-  this.Service.GetMap().subscribe(a =>{
+  this.Service.GetMap(this.pageNum,this.sort,this.dir).subscribe(a =>{
     this.mapinfo = a;
   })
   

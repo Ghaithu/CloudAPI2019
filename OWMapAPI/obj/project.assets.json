@@ -12539,11 +12539,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\frenz\\Desktop\\Ap Hogeschool\\3de jaar\\Cloud API\\API - learning\\API.csproj",
+      "projectUniqueName": "C:\\Users\\frenz\\Desktop\\Ap Hogeschool\\3de jaar\\Cloud API\\CloudAPI2019\\OWMapAPI\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\frenz\\Desktop\\Ap Hogeschool\\3de jaar\\Cloud API\\API - learning\\API.csproj",
+      "projectPath": "C:\\Users\\frenz\\Desktop\\Ap Hogeschool\\3de jaar\\Cloud API\\CloudAPI2019\\OWMapAPI\\API.csproj",
       "packagesPath": "C:\\Users\\frenz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\frenz\\Desktop\\Ap Hogeschool\\3de jaar\\Cloud API\\API - learning\\obj\\",
+      "outputPath": "C:\\Users\\frenz\\Desktop\\Ap Hogeschool\\3de jaar\\Cloud API\\CloudAPI2019\\OWMapAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
