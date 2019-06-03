@@ -1,0 +1,9 @@
+ik kreeg heel de tijd errors met het uploaden van mijn api en ik kreeg dit op het einde
+http://prntscr.com/nx7phe
+normaal moest de app geupload worden hier 
+{
+To view your application in the web browser run:
+  $ gcloud app browse --project=cloudapi-242621
+Project API deployed to App Engine Flex.
+App deployed to https://cloudapi-242621.appspot.com
+}
